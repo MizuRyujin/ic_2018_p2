@@ -1,4 +1,6 @@
 *.o
 *.swp
+*.exe
+tempCodeRunnerFile.c
 
 
