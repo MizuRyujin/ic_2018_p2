@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 
 	if(argc < 2)
 	{
-		fprintf(stderr, "ERRO: Insira o nome do ficheiro ini");
+		fprintf(stderr, "ERRO: Insira o nome do ficheiro ini\n");
 		exit(1);
 	}
 
