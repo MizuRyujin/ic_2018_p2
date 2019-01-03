@@ -1,4 +1,5 @@
 #include "Mapa.h"
+#include "abrirINI.h"
 #include <stdlib.h>
 
 MAPA*create_mapa(unsigned int xdim, unsigned int ydim, unsigned char norte, unsigned char sul, unsigned char este, unsigned char oeste){
