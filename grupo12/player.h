@@ -24,5 +24,14 @@ typedef struct player
 
 } PLAYER;
 
-int player_land[];
-
+int Turn() {
+    int Turn_p1;
+    int Turn_p2;
+    int Turn = 1;
+    if (Turn % 2 == 0) {
+            Turn_p2=1;
+    }
+    else {
+            Turn_p1=1;
+    }
+}

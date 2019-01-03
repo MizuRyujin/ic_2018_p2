@@ -3,9 +3,9 @@
 
 void Mostrar(PLAYER x)
 {
-	printf("Name		: %s\n", x.name);
-	printf("Resources	: %d wool/%d grain/%d lumber/%d brick/%d iron\n", x.resources.wool, x.resources.grain, x.resources.lumber, x.resources.brick, x.resources.iron);
-	printf("Territory	: %d villages/%d citys\n", x.territory.village, x.territory.city);
+	printf("Name		    : %s\n", x.name);
+	printf("Resources	    : %d wool/%d grain/%d lumber/%d brick/%d iron\n", x.resources.wool, x.resources.grain, x.resources.lumber, x.resources.brick, x.resources.iron);
+	printf("Territory	    : %d villages/%d citys\n", x.territory.village, x.territory.city);
 	printf("victory points	: %d\n", x.victory_points);
 
 }
@@ -50,7 +50,7 @@ int main()
 	printf("que recurso aumenta player 2?");
 	scanf("%s", &Dice_p2);
 
-        switch(Dice_p2)
+    switch(Dice_p2)
                 {
 
                 case 'w': b.resources.wool++; Mostrar(b); break;
@@ -62,33 +62,15 @@ int main()
                 default : printf("\n"); break;
                 }
 
-
-	int Turn;
-        int Turn_p1;
-        int Turn_p2;
-        Turn=1;
-        if (Turn % 2 == 0) {
-                Turn_p2=1;
-                Turn_p1=0;
+    int Turn()
+    {
+        if(Turn_p1 = 1) {
+            printf("%s", a.name);
         }
-        else {
-                Turn_p1=1;
-                Turn_p2=0;
+        else if(Turn_p2 = 1) {
+            printf("%s", b.name);
         }
-
-        while (Turn_p1=1) {
-
-                printf("%s rolls t$
-                Turn++;
-                Turn_p1=0;
-        }
-        while (Turn_p2=1) {
-
-                printf("%s rolls t$
-                Turn++;
-		break;
-        }
-
+    }
 
 }
 
