@@ -1,7 +1,9 @@
 *.o
 *.swp
 *.exe
-tempCodeRunnerFile.c
 *.out
+
+tempCodeRunnerFile.c
 player
+catanSimples
 
