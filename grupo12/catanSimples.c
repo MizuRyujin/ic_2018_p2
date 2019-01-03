@@ -5,7 +5,7 @@
 
 #include "abrirINI.h"
 
-int main(int argc, char **argv)
+int main(int argc, char **argv)   //Primeiro pede o ficheiro INI para as configs do jogo
 {
 	FILE * f;
 
