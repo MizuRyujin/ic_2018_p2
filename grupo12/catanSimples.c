@@ -4,6 +4,9 @@
 #include <time.h>
 
 #include "abrirINI.h"
+#include "borboleta.h"
+#include "Mapa.h"
+#include "players.h"
 
 int main(int argc, char **argv)   //Primeiro pede o ficheiro INI para as configs do jogo
 {
