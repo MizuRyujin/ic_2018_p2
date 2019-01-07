@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "Mapa.h"
-//#include "player.h"
+#include "player.h"
 //#include "borboleta.h"
 
 #define MAX 125
@@ -16,14 +16,15 @@ char player = 1;
 
 int main()
 {
-  for (i = 0; i< ydim; i++);
-  {
+  for (int i = 0; i < ydim; i++);
+  { 
+    for ( int j = 0; j < xdim);
     printf("+------");
-  }
-  printf("+");
-  for(j = 0; j< xdim; j++);
-  {
-    print(" # %d", j++ * ydim);
-  }
+    }
+    printf("+");
+    for(int j = 0; j< xdim; j++);
+    {
+    printf(" # %d", j++ * ydim);
+    }
 return 0;
 }
