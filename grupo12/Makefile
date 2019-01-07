@@ -4,7 +4,7 @@ LDFLAGS=
 LDLIBS=
 
 PROGRAM=catanSimples
-#MAPA=borboleta
+MAPA=borboleta
 
 $(PROGRAM): $(PROGRAM).o $(MAPA).o catanSimples.o Mapa.o player.o abrirINI.o
 
@@ -12,7 +12,7 @@ $(PROGRAM).o: $(PROGRAM).c player.h Mapa.h abrirINI.h
 
 $(MAPA).o: $(MAPA).c player.h Mapa.h abrirINI.h
 
-Mapa.o: Mapa.c abrirINI.c Mapa.h
+Mapa.o: borboleta.c borboleta.h  Mapa.c abrirINI.c Mapa.h
 
 player.o: player.c player.h
 
