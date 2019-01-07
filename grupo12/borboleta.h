@@ -17,14 +17,4 @@ typedef struct {
 	enum {nome; aldeia; cidade};
 	}NODE;
 
-
-
-
-char map [MAX][MAX];
-int north = 1;
-int south = 1;
-int east = 1;
-int west = 1;
-char village = 1;
-char city = 1;
-char player = 1;
+#endif
