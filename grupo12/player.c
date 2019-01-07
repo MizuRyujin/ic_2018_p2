@@ -61,17 +61,21 @@ int main()
                 case 'd': printf("Só há deserto nessa direção\n"); break;
                 default : printf("\n"); break;
                 }
-
-    int Turn()
-    {
-        if(Turn_p1 = 1) {
-            printf("%s", a.name);
+    if((a.resources.wool >= 1) && (a.resources.grain >= 0) && (a.resources.lumber >= 0) && (a.resources.brick >= 0)) {
+        char V_Choice;
+        printf("wanna buy a village? \n y for yes \n n for no");
+        scanf("%c", &V_Choice);
+        if(V_Choice == 'y') {
+            a.resources.wool--;
+            a.resources.grain--;
+            a.resources.lumber--;
+            a.resources.brick--;
+            Mostrar(a);
         }
-        else if(Turn_p2 = 1) {
-            printf("%s", b.name);
+        else if(V_Choice == 'n'){
+
         }
     }
-
 }
 
 
