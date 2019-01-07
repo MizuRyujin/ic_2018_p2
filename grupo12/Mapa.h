@@ -2,15 +2,22 @@
 #define __MAPA_H__
 
 typedef void *ITEM;
+
 typedef struct {
-    ITEM*map;
-    unsigned int xdim;
-    unsigned int ydim;
-    unsigned char north;
-    unsigned char south;
-    unsigned char east;
-    unsigned char west;
-} MAPA;
+	enum {desert; iron; brick; wool; lumber; grain};
+	int number;
+	} TERRAIN;
+
+typedef struct {
+	TERRAIN north, south, east, west;
+	int player
+	enum
+
+typedef struct {
+	ITEM*map;
+	unsigned int xdim;
+	unsigned int ydim;
+    } MAPA;
 
 MAPA*create_mapa(unsigned int xdim, unsigned int ydim, unsigned char north, unsigned char south, unsigned char east, unsigned char west);
 void destroy_map(MAPA*mp);
