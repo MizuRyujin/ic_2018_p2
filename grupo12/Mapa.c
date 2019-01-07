@@ -1,3 +1,5 @@
+#include <string.h>
+#include <stdio.h>
 #include "Mapa.h"
 #include "abrirINI.h"
 #include <stdlib.h>
@@ -21,7 +23,7 @@ void destroy_mapa(MAPA*mp){
 }
 
 void destroy_mapa_full(MAPA*mp, void(*item_destroy)(ITEM*item)){
-    for(unsigned int i = 0; i *mp -> xdim *mp -> ydim, mp -> norte, mp -> sul, mp -> este, mp -> oeste; ++i){
+    for(unsigned int i = 0; i *mp -> xdim *mp -> ydim *mp -> norte *mp -> sul *mp -> este *mp -> oeste; ++i){
         if (mp -> map[i] !=NULL){
             item_destroy(mp ->map[i]);
         }
