@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "player.h"
+#define MAX 256
+char line[MAX];
 
 void Mostrar(PLAYER x)
 {
@@ -30,10 +32,21 @@ int main()
 
 	Mostrar(b);
 
+    int Turn() {
+        int Turn = 1;
+        if (Turn % 2 == 0) {
+                printf("%s", b.name);
+        }
+        else {
+                printf("%s", a.name);
+        }
+    }
+
 	char Dice_p1;
-	int Dice_p2;
+	char Dice_p2;
 	printf("que recurso aumenta player 1?");
-	scanf("%c", &Dice_p1);
+	fgets(line,MAX,stdin);
+	sscanf(line, " %c", &Dice_p1);
 
 	switch(Dice_p1)
                 {
@@ -48,7 +61,9 @@ int main()
                 }
 
 	printf("que recurso aumenta player 2?");
-	scanf("%s", &Dice_p2);
+
+	fgets(line,MAX,stdin);
+	sscanf(line, " %c", &Dice_p2);
 
     switch(Dice_p2)
                 {
@@ -61,21 +76,46 @@ int main()
                 case 'd': printf("Só há deserto nessa direção\n"); break;
                 default : printf("\n"); break;
                 }
-    if((a.resources.wool >= 1) && (a.resources.grain >= 0) && (a.resources.lumber >= 0) && (a.resources.brick >= 0)) {
-        char V_Choice;
-        printf("wanna buy a village? \n y for yes \n n for no");
-        scanf("%c", &V_Choice);
-        if(V_Choice == 'y') {
-            a.resources.wool--;
-            a.resources.grain--;
-            a.resources.lumber--;
-            a.resources.brick--;
-            Mostrar(a);
-        }
-        else if(V_Choice == 'n'){
 
+
+        if(a.resources.wool >= 1 && a.resources.grain >= 1 && a.resources.lumber >= 1 && a.resources.brick >= 1) {
+            char V_Choice;
+            printf("wanna buy a village? \n y for yes \n n for no");
+            fgets(line,MAX,stdin);
+            sscanf(line, " %c", &V_Choice);
+            if(V_Choice == 'y') {
+                a.resources.wool--;
+                a.resources.grain--;
+                a.resources.lumber--;
+                a.resources.brick--;
+                a.territory.village++;
+                Mostrar(a);
+            }
+            else if(V_Choice == 'n') {
+                printf("maybe next round then");
+            }
+            else {
+                printf("that doesn't answer my question");
+            }
         }
-    }
+        if(a.resources.iron >= 3 && a.resources.grain >= 2) {
+            char C_Choice;
+            printf("wanna buy a city? \n y for yes \n n for no");
+            fgets(line,MAX,stdin);
+            sscanf(line, " %c", &C_Choice);
+            if(C_Choice == 'y') {
+                a.resources.iron -= 3;
+                a.resources.grain -= 2;
+                a.territory.city++;
+                Mostrar(a);
+            }
+            else if(C_Choice == 'n') {
+                printf("maybe next round then");
+            }
+            else {
+                printf("that doesn't answer my question");
+            }
+        }
 }
 
 
