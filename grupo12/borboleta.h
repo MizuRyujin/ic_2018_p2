@@ -4,17 +4,16 @@
 #include <stdio.h>
 #include "player.h"
 
-#define MAX 125
-
 typedef struct {
-	enum {desert; iron; brick; wool; grain; lumber};
-	int coordinate;
+	enum {desert, iron, brick, wool, grain, lumber} recurso;
+	int valorDado;
 	}TERRAIN;
 
 typedef struct {
 	TERRAIN north, south, east, west;
-	int player
-	enum {nome; aldeia; cidade};
+	int player;
+	int coordinate;
+	enum {nome, aldeia, cidade} infoNode;
 	}NODE;
 
 #endif
