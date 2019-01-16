@@ -5,15 +5,15 @@
 #include "player.h"
 
 typedef struct {
-	enum {desert, iron, brick, wool, grain, lumber} recurso;
-	int valorDado;
+	enum {desert, iron, brick, wool, grain, lumber} resource;
+	int dieValue;
 	}TERRAIN;
 
 typedef struct {
 	TERRAIN north, south, east, west;
 	int player;
-	int coordinate;
-	enum {nome, aldeia, cidade} infoNode;
+	int coordinates;
+	enum {nome, aldeia, cidade} nodeInfo;
 	}NODE;
 
 #endif
