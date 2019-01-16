@@ -2,6 +2,8 @@
 #include "player.h"
 #define MAX 256
 char line[MAX];
+char Trade41[MAX];
+char Trade10[MAX];
 
 void Mostrar(PLAYER x)
 {
@@ -12,9 +14,9 @@ void Mostrar(PLAYER x)
 
 }
 
-
 int main()
 {
+        int Turn = 1;
 
 	PLAYER a = {"",{0,0,0,0,0},{0,0},0};
 
@@ -32,15 +34,7 @@ int main()
 
 	Mostrar(b);
 
-    int Turn() {
-        int Turn = 1;
-        if (Turn % 2 == 0) {
-                printf("%s", b.name);
-        }
-        else {
-                printf("%s", a.name);
-        }
-    }
+	//turn(a, b, Turn); <- como chamar função turnos
 
 	char Dice_p1;
 	char Dice_p2;
@@ -60,6 +54,9 @@ int main()
                 default : printf("\n"); break;
                 }
 
+    //trade4(a, b, Trade41); <- como chamar função da troca 4 por 1
+    //trade10(a, b, Trade10); <- ^^^^^^^^^^^^^^^^^^^^^^^^ 10 por vp
+
 	printf("que recurso aumenta player 2?");
 
 	fgets(line,MAX,stdin);
@@ -76,7 +73,6 @@ int main()
                 case 'd': printf("Só há deserto nessa direção\n"); break;
                 default : printf("\n"); break;
                 }
-
 
         if(a.resources.wool >= 1 && a.resources.grain >= 1 && a.resources.lumber >= 1 && a.resources.brick >= 1) {
             char V_Choice;
@@ -98,7 +94,7 @@ int main()
                 printf("that doesn't answer my question");
             }
         }
-        if(a.resources.iron >= 3 && a.resources.grain >= 2) {
+        if(a.resources.iron >= 3 && a.resources.grain >= 2 && a.territory.village >= 1) {
             char C_Choice;
             printf("wanna buy a city? \n y for yes \n n for no");
             fgets(line,MAX,stdin);
@@ -107,6 +103,7 @@ int main()
                 a.resources.iron -= 3;
                 a.resources.grain -= 2;
                 a.territory.city++;
+                a.territory.village--;
                 Mostrar(a);
             }
             else if(C_Choice == 'n') {
