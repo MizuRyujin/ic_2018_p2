@@ -5,15 +5,6 @@ char line[MAX];
 char Trade41[MAX];
 char Trade10[MAX];
 
-void Mostrar(PLAYER x)
-{
-	printf("Name		    : %s\n", x.name);
-	printf("Resources	    : %d wool/%d grain/%d lumber/%d brick/%d iron\n", x.resources.wool, x.resources.grain, x.resources.lumber, x.resources.brick, x.resources.iron);
-	printf("Territory	    : %d villages/%d citys\n", x.territory.village, x.territory.city);
-	printf("victory points	: %d\n", x.victory_points);
-
-}
-
 int main()
 {
         int Turn = 1;
@@ -45,7 +36,7 @@ int main()
 	switch(Dice_p1)
                 {
 
-                case 'w': a.resources.wool++; Mostrar(a); break;
+                case 'w': a.resources.wool+= 10; Mostrar(a); break;
                 case 'g': a.resources.grain++; Mostrar(a); break;
                 case 'l': a.resources.lumber++; Mostrar(a); break;
                 case 'b': a.resources.brick++; Mostrar(a); break;
@@ -54,8 +45,8 @@ int main()
                 default : printf("\n"); break;
                 }
 
-    //trade4(a, b, Trade41); <- como chamar função da troca 4 por 1
-    //trade10(a, b, Trade10); <- ^^^^^^^^^^^^^^^^^^^^^^^^ 10 por vp
+    //trade4(a, Trade41);
+    trade10(a, Trade10);
 
 	printf("que recurso aumenta player 2?");
 
@@ -65,7 +56,7 @@ int main()
     switch(Dice_p2)
                 {
 
-                case 'w': b.resources.wool++; Mostrar(b); break;
+                case 'w': b.resources.wool+=4; Mostrar(b); break;
                 case 'g': b.resources.grain++; Mostrar(b); break;
                 case 'l': b.resources.lumber++; Mostrar(b); break;
                 case 'b': b.resources.brick++; Mostrar(b); break;
