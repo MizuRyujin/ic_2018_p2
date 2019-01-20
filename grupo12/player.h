@@ -17,8 +17,8 @@ typedef struct {
 	int village;
 	int city;
 	}TERRITORY;
-
 typedef struct {
+
 	char name[100];
 	RESOURCES resources;
 	TERRITORY territory;
@@ -71,10 +71,11 @@ void trade4(PLAYER x, char Trade41) {
                             }
             }
             else if(Trade_Confirm == 'n') {
-                printf("you keep your resources as is then");
+                printf("you keep your resources as is then\n");
             }
             else {
-                printf("that doesn't answer my question");
+                printf("that doesn't answer my question\n");
+                trade4(x, Trade41);
             }
         }
 
@@ -106,7 +107,8 @@ void trade4(PLAYER x, char Trade41) {
                 printf("you keep your resources as is then");
             }
             else {
-                printf("that doesn't answer my question");
+                printf("that doesn't answer my question\n");
+                trade4(x, Trade41);
             }
         }
 
@@ -138,7 +140,8 @@ void trade4(PLAYER x, char Trade41) {
                 printf("you keep your resources as is then");
             }
             else {
-                printf("that doesn't answer my question");
+                printf("that doesn't answer my question\n");
+                trade4(x, Trade41);
             }
         }
 
@@ -170,7 +173,8 @@ void trade4(PLAYER x, char Trade41) {
                 printf("you keep your resources as is then");
             }
             else {
-                printf("that doesn't answer my question");
+                printf("that doesn't answer my question\n");
+                trade4(x, Trade41);
             }
         }
 
@@ -202,7 +206,8 @@ void trade4(PLAYER x, char Trade41) {
                 printf("you keep your resources as is then");
             }
             else {
-                printf("that doesn't answer my question");
+                printf("that doesn't answer my question\n");
+                trade4(x, Trade41);
             }
         }
 }
@@ -223,7 +228,8 @@ void trade10(PLAYER x, char Trade10) {
             printf("you keep your resources as is then");
         }
         else {
-            printf("that doesn't answer my question");
+            printf("that doesn't answer my question\n");
+            trade10(x, Trade10);
         }
     }
 
@@ -241,7 +247,8 @@ void trade10(PLAYER x, char Trade10) {
             printf("you keep your resources as is then");
         }
         else {
-            printf("that doesn't answer my question");
+            printf("that doesn't answer my question\n");
+            trade10(x, Trade10);
         }
     }
 
@@ -259,7 +266,8 @@ void trade10(PLAYER x, char Trade10) {
             printf("you keep your resources as is then");
         }
         else {
-            printf("that doesn't answer my question");
+            printf("that doesn't answer my question\n");
+            trade10(x, Trade10);
         }
     }
 
@@ -277,7 +285,8 @@ void trade10(PLAYER x, char Trade10) {
             printf("you keep your resources as is then");
         }
         else {
-            printf("that doesn't answer my question");
+            printf("that doesn't answer my question\n");
+            trade10(x, Trade10);
         }
     }
 
@@ -295,12 +304,65 @@ void trade10(PLAYER x, char Trade10) {
             printf("you keep your resources as is then");
         }
         else {
-            printf("that doesn't answer my question");
+            printf("that doesn't answer my question\n");
+            trade10(x, Trade10);
         }
     }
 
+}
 
+void village_buy(PLAYER x) {
+        if(x.resources.wool >= 1 && x.resources.grain >= 1 && x.resources.lumber >= 1 && x.resources.brick >= 1) {
+            char V_Choice;
+            printf("wanna buy a village? \n y for yes \n n for no");
+            fgets(line,MAX,stdin);
+            sscanf(line, " %c", &V_Choice);
+            if(V_Choice == 'y') {
+                x.resources.wool--;
+                x.resources.grain--;
+                x.resources.lumber--;
+                x.resources.brick--;
+                x.territory.village++;
+                Mostrar(x);
+            }
+            else if(V_Choice == 'n') {
+                printf("maybe next round then");
+            }
+            else {
+                printf("that doesn't answer my question\n");
+                village_buy(x);
+            }
+        }
+}
 
+void city_buy(PLAYER x) {
+        if(x.resources.iron >= 3 && x.resources.grain >= 2 && x.territory.village >= 1) {
+            char C_Choice;
+            printf("wanna buy a city? \n y for yes \n n for no");
+            fgets(line,MAX,stdin);
+            sscanf(line, " %c", &C_Choice);
+            if(C_Choice == 'y') {
+                x.resources.iron -= 3;
+                x.resources.grain -= 2;
+                x.territory.city++;
+                x.territory.village--;
+                Mostrar(x);
+            }
+            else if(C_Choice == 'n') {
+                printf("maybe next round then");
+            }
+            else {
+                printf("that doesn't answer my question\n");
+                city_buy(x);
+            }
+        }
+}
+
+void victory_points (PLAYER x) {
+    if(x.territory.village++)
+        x.victory_points++;
+    else if(x.territory.city++)
+        x.victory_points++;
 }
 
 //void vp_up(PLAYER a, PLAYER b, int VP_Up) <- estava a tentar fazer uma função que aumentasse os Victory points
