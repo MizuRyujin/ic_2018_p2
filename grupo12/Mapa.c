@@ -4,7 +4,7 @@
 #include "abrirINI.h"
 #include <stdlib.h>
 
-MAPA*create_mapa(unsigned int xdim, unsigned int ydim, unsigned char north, unsigned char south, unsigned char east, unsigned char west){
+MAPA*create_mapa(unsigned int xdim, unsigned int ydim){
     MAPA*mp = NULL;
     mp = malloc(sizeof(MAPA));
     mp ->map = calloc(xdim*ydim, sizeof(ITEM));
