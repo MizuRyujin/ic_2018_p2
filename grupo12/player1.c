@@ -23,7 +23,7 @@ int dice(int dice1, int dice2)
 
 
 
-int main()
+void blabla()
 {
 
     PLAYER a = {"",{0,0,0,0,0},{0,0},0};
@@ -63,308 +63,316 @@ int main()
                         default : printf("\n"); break;
                         }
 
-            if (a.resources.wool >= 4 || a.resources.grain >= 4 || a.resources.lumber >= 4 || a.resources.brick >= 4 || a.resources.iron >= 4) {
-                char Trade_Confirm;
-                    if (a.resources.wool >= 4) {
-                        printf("you have %d wool \n", a.resources.wool);
-                        printf("do you wish to trade 4 of it for 1 of any other resource? \n y for yes \n n for no \n");
-                        fgets(line,MAX,stdin);
-                        sscanf(line, " %c", &Trade_Confirm);
-                        if(Trade_Confirm == 'y') {
-                            printf("which one do you wish to adquire? \n");
-                            printf("g for grain \n");
-                            printf("l for lumber \n");
-                            printf("b for brick \n");
-                            printf("i for iron \n");
+            int trade4(PLAYER x) {
+                if (x.resources.wool >= 4 || x.resources.grain >= 4 || x.resources.lumber >= 4 || x.resources.brick >= 4 || x.resources.iron >= 4) {
+                    char Trade_Confirm;
+                        if (x.resources.wool >= 4) {
+                            printf("you have %d wool \n", x.resources.wool);
+                            printf("do you wish to trade 4 of it for 1 of any other resource? \n y for yes \n n for no \n");
                             fgets(line,MAX,stdin);
-                            sscanf(line, " %c", &Trade41);
+                            sscanf(line, " %c", &Trade_Confirm);
+                            if(Trade_Confirm == 'y') {
+                                printf("which one do you wish to adquire? \n");
+                                printf("g for grain \n");
+                                printf("l for lumber \n");
+                                printf("b for brick \n");
+                                printf("i for iron \n");
+                                fgets(line,MAX,stdin);
+                                sscanf(line, " %c", &Trade41);
 
-                            switch(Trade41)
-                                        {
+                                switch(Trade41)
+                                            {
 
-                                        case 'w': a.resources.wool++; a.resources.wool-= 4; Mostrar(a); break;
-                                        case 'g': a.resources.grain++; a.resources.wool-= 4; Mostrar(a); break;
-                                        case 'l': a.resources.lumber++; a.resources.wool-= 4; Mostrar(a); break;
-                                        case 'b': a.resources.brick++; a.resources.wool-= 4; Mostrar(a); break;
-                                        case 'i': a.resources.iron++; a.resources.wool-= 4; Mostrar(a); break;
-                                        }
+                                            case 'w': x.resources.wool++; x.resources.wool-= 4; Mostrar(x); break;
+                                            case 'g': x.resources.grain++; x.resources.wool-= 4; Mostrar(x); break;
+                                            case 'l': x.resources.lumber++; x.resources.wool-= 4; Mostrar(x); break;
+                                            case 'b': x.resources.brick++; x.resources.wool-= 4; Mostrar(x); break;
+                                            case 'i': x.resources.iron++; x.resources.wool-= 4; Mostrar(x); break;
+                                            }
+                            }
+                            else if(Trade_Confirm == 'n') {
+                                printf("you keep your resources as is then\n");
+                            }
+                            else {
+                                printf("that doesn't answer my question\n");
+                                //trade4(a);
+                            }
                         }
-                        else if(Trade_Confirm == 'n') {
-                            printf("you keep your resources as is then\n");
-                        }
-                        else {
-                            printf("that doesn't answer my question\n");
-                            //trade4(a);
-                        }
-                    }
 
-                    if (a.resources.grain >= 4) {
-                        printf("you have %d grain \n", a.resources.grain);
-                        printf("do you wish to trade 4 of it for 1 of any other resource? \n y for yes \n n for no \n");
-                        fgets(line,MAX,stdin);
-                        sscanf(line, " %c", &Trade_Confirm);
-                        if(Trade_Confirm == 'y') {
-                            printf("which one do you wish to adquire? \n");
-                            printf("w for wool \n");
-                            printf("l for lumber \n");
-                            printf("b for brick \n");
-                            printf("i for iron \n");
+                        if (x.resources.grain >= 4) {
+                            printf("you have %d grain \n", x.resources.grain);
+                            printf("do you wish to trade 4 of it for 1 of any other resource? \n y for yes \n n for no \n");
                             fgets(line,MAX,stdin);
-                            sscanf(line, " %c", &Trade41);
+                            sscanf(line, " %c", &Trade_Confirm);
+                            if(Trade_Confirm == 'y') {
+                                printf("which one do you wish to adquire? \n");
+                                printf("w for wool \n");
+                                printf("l for lumber \n");
+                                printf("b for brick \n");
+                                printf("i for iron \n");
+                                fgets(line,MAX,stdin);
+                                sscanf(line, " %c", &Trade41);
 
-                            switch(Trade41)
-                                        {
+                                switch(Trade41)
+                                            {
 
-                                        case 'w': a.resources.wool++; a.resources.grain-= 4; Mostrar(a); break;
-                                        case 'g': a.resources.grain++; a.resources.grain-= 4; Mostrar(a); break;
-                                        case 'l': a.resources.lumber++; a.resources.grain-= 4; Mostrar(a); break;
-                                        case 'b': a.resources.brick++; a.resources.grain-= 4; Mostrar(a); break;
-                                        case 'i': a.resources.iron++; a.resources.grain-= 4; Mostrar(a); break;
-                                        }
+                                            case 'w': x.resources.wool++; x.resources.grain-= 4; Mostrar(x); break;
+                                            case 'g': x.resources.grain++; x.resources.grain-= 4; Mostrar(x); break;
+                                            case 'l': x.resources.lumber++; x.resources.grain-= 4; Mostrar(x); break;
+                                            case 'b': x.resources.brick++; x.resources.grain-= 4; Mostrar(x); break;
+                                            case 'i': x.resources.iron++; x.resources.grain-= 4; Mostrar(x); break;
+                                            }
+                            }
+                            else if(Trade_Confirm == 'n') {
+                                printf("you keep your resources as is then");
+                            }
+                            else {
+                                printf("that doesn't answer my question\n");
+                                //trade4(a);
+                            }
                         }
-                        else if(Trade_Confirm == 'n') {
-                            printf("you keep your resources as is then");
-                        }
-                        else {
-                            printf("that doesn't answer my question\n");
-                            //trade4(a);
-                        }
-                    }
 
-                    if (a.resources.lumber >= 4) {
-                        printf("you have %d lumber \n", a.resources.lumber);
-                        printf("do you wish to trade 4 of it for 1 of any other resource? \n y for yes \n n for no \n");
-                        fgets(line,MAX,stdin);
-                        sscanf(line, " %c", &Trade_Confirm);
-                        if(Trade_Confirm == 'y') {
-                            printf("which one do you wish to adquire? \n");
-                            printf("w for wool \n");
-                            printf("g for grain \n");
-                            printf("b for brick \n");
-                            printf("i for iron \n");
+                        if (x.resources.lumber >= 4) {
+                            printf("you have %d lumber \n", x.resources.lumber);
+                            printf("do you wish to trade 4 of it for 1 of any other resource? \n y for yes \n n for no \n");
                             fgets(line,MAX,stdin);
-                            sscanf(line, " %c", &Trade41);
+                            sscanf(line, " %c", &Trade_Confirm);
+                            if(Trade_Confirm == 'y') {
+                                printf("which one do you wish to adquire? \n");
+                                printf("w for wool \n");
+                                printf("g for grain \n");
+                                printf("b for brick \n");
+                                printf("i for iron \n");
+                                fgets(line,MAX,stdin);
+                                sscanf(line, " %c", &Trade41);
 
-                            switch(Trade41)
-                                        {
+                                switch(Trade41)
+                                            {
 
-                                        case 'w': a.resources.wool++; a.resources.lumber-= 4; Mostrar(a); break;
-                                        case 'g': a.resources.grain++; a.resources.lumber-= 4; Mostrar(a); break;
-                                        case 'l': a.resources.lumber++; a.resources.lumber-= 4; Mostrar(a); break;
-                                        case 'b': a.resources.brick++; a.resources.lumber-= 4; Mostrar(a); break;
-                                        case 'i': a.resources.iron++; a.resources.lumber-= 4; Mostrar(a); break;
-                                        }
+                                            case 'w': x.resources.wool++; x.resources.lumber-= 4; Mostrar(x); break;
+                                            case 'g': x.resources.grain++; x.resources.lumber-= 4; Mostrar(x); break;
+                                            case 'l': x.resources.lumber++; x.resources.lumber-= 4; Mostrar(x); break;
+                                            case 'b': x.resources.brick++; x.resources.lumber-= 4; Mostrar(x); break;
+                                            case 'i': x.resources.iron++; x.resources.lumber-= 4; Mostrar(x); break;
+                                            }
+                            }
+                            else if(Trade_Confirm == 'n') {
+                                printf("you keep your resources as is then");
+                            }
+                            else {
+                                printf("that doesn't answer my question\n");
+                                //trade4(a);
+                            }
                         }
-                        else if(Trade_Confirm == 'n') {
-                            printf("you keep your resources as is then");
-                        }
-                        else {
-                            printf("that doesn't answer my question\n");
-                            //trade4(a);
-                        }
-                    }
 
-                    if (a.resources.brick >= 4) {
-                        printf("you have %d brick \n", a.resources.brick);
-                        printf("do you wish to trade 4 of it for 1 of any other resource? \n y for yes \n n for no \n");
-                        fgets(line,MAX,stdin);
-                        sscanf(line, " %c", &Trade_Confirm);
-                        if(Trade_Confirm == 'y') {
-                            printf("which one do you wish to adquire? \n");
-                            printf("w for wool \n");
-                            printf("g for grain \n");
-                            printf("l for lumber \n");
-                            printf("i for iron \n");
+                        if (x.resources.brick >= 4) {
+                            printf("you have %d brick \n", x.resources.brick);
+                            printf("do you wish to trade 4 of it for 1 of any other resource? \n y for yes \n n for no \n");
                             fgets(line,MAX,stdin);
-                            sscanf(line, " %c", &Trade41);
+                            sscanf(line, " %c", &Trade_Confirm);
+                            if(Trade_Confirm == 'y') {
+                                printf("which one do you wish to adquire? \n");
+                                printf("w for wool \n");
+                                printf("g for grain \n");
+                                printf("l for lumber \n");
+                                printf("i for iron \n");
+                                fgets(line,MAX,stdin);
+                                sscanf(line, " %c", &Trade41);
 
-                            switch(Trade41)
-                                        {
+                                switch(Trade41)
+                                            {
 
-                                        case 'w': a.resources.wool++; a.resources.brick-= 4; Mostrar(a); break;
-                                        case 'g': a.resources.grain++; a.resources.brick-= 4; Mostrar(a); break;
-                                        case 'l': a.resources.lumber++; a.resources.brick-= 4; Mostrar(a); break;
-                                        case 'b': a.resources.brick++; a.resources.brick-= 4; Mostrar(a); break;
-                                        case 'i': a.resources.iron++; a.resources.brick-= 4; Mostrar(a); break;
-                                        }
+                                            case 'w': x.resources.wool++; x.resources.brick-= 4; Mostrar(x); break;
+                                            case 'g': x.resources.grain++; x.resources.brick-= 4; Mostrar(x); break;
+                                            case 'l': x.resources.lumber++; x.resources.brick-= 4; Mostrar(x); break;
+                                            case 'b': x.resources.brick++; x.resources.brick-= 4; Mostrar(x); break;
+                                            case 'i': x.resources.iron++; x.resources.brick-= 4; Mostrar(x); break;
+                                            }
+                            }
+                            else if(Trade_Confirm == 'n') {
+                                printf("you keep your resources as is then");
+                            }
+                            else {
+                                printf("that doesn't answer my question\n");
+                                //trade4(a);
+                            }
                         }
-                        else if(Trade_Confirm == 'n') {
-                            printf("you keep your resources as is then");
-                        }
-                        else {
-                            printf("that doesn't answer my question\n");
-                            //trade4(a);
-                        }
-                    }
 
-                    if (a.resources.iron >= 4) {
-                        printf("you have %d iron \n", a.resources.iron);
-                        printf("do you wish to trade 4 of it for 1 of any other resource? \n y for yes \n n for no \n");
-                        fgets(line,MAX,stdin);
-                        sscanf(line, " %c", &Trade_Confirm);
-                        if(Trade_Confirm == 'y') {
-                            printf("which one do you wish to adquire? \n");
-                            printf("w for wool \n");
-                            printf("g for grain \n");
-                            printf("l for lumber \n");
-                            printf("b for brick \n");
+                        if (x.resources.iron >= 4) {
+                            printf("you have %d iron \n", x.resources.iron);
+                            printf("do you wish to trade 4 of it for 1 of any other resource? \n y for yes \n n for no \n");
                             fgets(line,MAX,stdin);
-                            sscanf(line, " %c", &Trade41);
+                            sscanf(line, " %c", &Trade_Confirm);
+                            if(Trade_Confirm == 'y') {
+                                printf("which one do you wish to adquire? \n");
+                                printf("w for wool \n");
+                                printf("g for grain \n");
+                                printf("l for lumber \n");
+                                printf("b for brick \n");
+                                fgets(line,MAX,stdin);
+                                sscanf(line, " %c", &Trade41);
 
-                            switch(Trade41)
-                                        {
+                                switch(Trade41)
+                                            {
 
-                                        case 'w': a.resources.wool++; a.resources.iron-= 4; Mostrar(a); break;
-                                        case 'g': a.resources.grain++; a.resources.iron-= 4; Mostrar(a); break;
-                                        case 'l': a.resources.lumber++; a.resources.iron-= 4; Mostrar(a); break;
-                                        case 'b': a.resources.brick++; a.resources.iron-= 4; Mostrar(a); break;
-                                        case 'i': a.resources.iron++; a.resources.iron-= 4; Mostrar(a); break;
-                                        }
-                        }
-                        else if(Trade_Confirm == 'n') {
-                            printf("you keep your resources as is then");
-                        }
-                        else {
-                            printf("that doesn't answer my question\n");
-                            //trade4(a);
-                        }
-                }
-            }
-
-            if (a.resources.wool >= 10 || a.resources.grain >= 10 || a.resources.lumber >= 10 || a.resources.brick >= 10 || a.resources.iron >= 10) {
-                char Trade_Confirm;
-                if (a.resources.wool >= 10) {
-                    printf("you have %d wool \n", a.resources.wool);
-                    printf("do you wish to trade 10 of it for 1 victory point? \n y for yes \n n for no \n");
-                    fgets(line,MAX,stdin);
-                    sscanf(line, " %c", &Trade_Confirm);
-                    if(Trade_Confirm == 'y') {
-                        a.resources.wool -= 10;
-                        a.victory_points++;
-                        Mostrar(a);
-                    }
-                    else if(Trade_Confirm == 'n') {
-                        printf("you keep your resources as is then");
-                    }
-                    else {
-                        printf("that doesn't answer my question\n");
-                    }
-                }
-
-                if (a.resources.grain >= 10) {
-                    printf("you have %d grain \n", a.resources.grain);
-                    printf("do you wish to trade 10 of it for 1 victory point? \n y for yes \n n for no \n");
-                    fgets(line,MAX,stdin);
-                    sscanf(line, " %c", &Trade_Confirm);
-                    if(Trade_Confirm == 'y') {
-                        a.resources.grain -= 10;
-                        a.victory_points++;
-                        Mostrar(a);
-                    }
-                    else if(Trade_Confirm == 'n') {
-                        printf("you keep your resources as is then");
-                    }
-                    else {
-                        printf("that doesn't answer my question\n");
-                    }
-                }
-
-                if (a.resources.lumber >= 10) {
-                    printf("you have %d lumber \n", a.resources.lumber);
-                    printf("do you wish to trade 10 of it for 1 victory point? \n y for yes \n n for no \n");
-                    fgets(line,MAX,stdin);
-                    sscanf(line, " %c", &Trade_Confirm);
-                    if(Trade_Confirm == 'y') {
-                        a.resources.lumber -= 10;
-                        a.victory_points++;
-                        Mostrar(a);
-                    }
-                    else if(Trade_Confirm == 'n') {
-                        printf("you keep your resources as is then");
-                    }
-                    else {
-                        printf("that doesn't answer my question\n");
-                    }
-                }
-
-                if (a.resources.brick >= 10) {
-                    printf("you have %d brick \n", a.resources.brick);
-                    printf("do you wish to trade 10 of it for 1 victory point? \n y for yes \n n for no \n");
-                    fgets(line,MAX,stdin);
-                    sscanf(line, " %c", &Trade_Confirm);
-                    if(Trade_Confirm == 'y') {
-                        a.resources.brick -= 10;
-                        a.victory_points++;
-                        Mostrar(a);
-                    }
-                    else if(Trade_Confirm == 'n') {
-                        printf("you keep your resources as is then");
-                    }
-                    else {
-                        printf("that doesn't answer my question\n");
-                    }
-                }
-
-                if (a.resources.iron >= 10) {
-                    printf("you have %d iron \n", a.resources.iron);
-                    printf("do you wish to trade 10 of it for 1 victory point? \n y for yes \n n for no \n");
-                    fgets(line,MAX,stdin);
-                    sscanf(line, " %c", &Trade_Confirm);
-                    if(Trade_Confirm == 'y') {
-                        a.resources.iron -= 10;
-                        a.victory_points++;
-                        Mostrar(a);
-                    }
-                    else if(Trade_Confirm == 'n') {
-                        printf("you keep your resources as is then");
-                    }
-                    else {
-                        printf("that doesn't answer my question\n");
+                                            case 'w': x.resources.wool++; x.resources.iron-= 4; Mostrar(x); break;
+                                            case 'g': x.resources.grain++; x.resources.iron-= 4; Mostrar(x); break;
+                                            case 'l': x.resources.lumber++; x.resources.iron-= 4; Mostrar(x); break;
+                                            case 'b': x.resources.brick++; x.resources.iron-= 4; Mostrar(x); break;
+                                            case 'i': x.resources.iron++; x.resources.iron-= 4; Mostrar(x); break;
+                                            }
+                            }
+                            else if(Trade_Confirm == 'n') {
+                                printf("you keep your resources as is then");
+                            }
+                            else {
+                                printf("that doesn't answer my question\n");
+                                //trade4(a);
+                            }
                     }
                 }
             }
 
-            if(a.resources.wool >= 1 && a.resources.grain >= 1 && a.resources.lumber >= 1 && a.resources.brick >= 1) {
-                char V_Choice;
-                printf("wanna buy a village? \n y for yes \n n for no");
-                fgets(line,MAX,stdin);
-                sscanf(line, " %c", &V_Choice);
-                if(V_Choice == 'y') {
-                    a.resources.wool--;
-                    a.resources.grain--;
-                    a.resources.lumber--;
-                    a.resources.brick--;
-                    a.territory.village++;
-                    a.victory_points++;
-                    Mostrar(a);
-                }
-                else if(V_Choice == 'n') {
-                    printf("maybe next round then");
-                }
-                else {
-                    printf("that doesn't answer my question\n");
+            int trade10(PLAYER x) {
+                if (x.resources.wool >= 10 || x.resources.grain >= 10 || x.resources.lumber >= 10 || x.resources.brick >= 10 || x.resources.iron >= 10) {
+                    char Trade_Confirm;
+                    if (x.resources.wool >= 10) {
+                        printf("you have %d wool \n", x.resources.wool);
+                        printf("do you wish to trade 10 of it for 1 victory point? \n y for yes \n n for no \n");
+                        fgets(line,MAX,stdin);
+                        sscanf(line, " %c", &Trade_Confirm);
+                        if(Trade_Confirm == 'y') {
+                            x.resources.wool -= 10;
+                            x.victory_points++;
+                            Mostrar(x);
+                        }
+                        else if(Trade_Confirm == 'n') {
+                            printf("you keep your resources as is then");
+                        }
+                        else {
+                            printf("that doesn't answer my question\n");
+                        }
+                    }
+
+                    if (x.resources.grain >= 10) {
+                        printf("you have %d grain \n", x.resources.grain);
+                        printf("do you wish to trade 10 of it for 1 victory point? \n y for yes \n n for no \n");
+                        fgets(line,MAX,stdin);
+                        sscanf(line, " %c", &Trade_Confirm);
+                        if(Trade_Confirm == 'y') {
+                            x.resources.grain -= 10;
+                            x.victory_points++;
+                            Mostrar(x);
+                        }
+                        else if(Trade_Confirm == 'n') {
+                            printf("you keep your resources as is then");
+                        }
+                        else {
+                            printf("that doesn't answer my question\n");
+                        }
+                    }
+
+                    if (x.resources.lumber >= 10) {
+                        printf("you have %d lumber \n", x.resources.lumber);
+                        printf("do you wish to trade 10 of it for 1 victory point? \n y for yes \n n for no \n");
+                        fgets(line,MAX,stdin);
+                        sscanf(line, " %c", &Trade_Confirm);
+                        if(Trade_Confirm == 'y') {
+                            x.resources.lumber -= 10;
+                            x.victory_points++;
+                            Mostrar(x);
+                        }
+                        else if(Trade_Confirm == 'n') {
+                            printf("you keep your resources as is then");
+                        }
+                        else {
+                            printf("that doesn't answer my question\n");
+                        }
+                    }
+
+                    if (x.resources.brick >= 10) {
+                        printf("you have %d brick \n", x.resources.brick);
+                        printf("do you wish to trade 10 of it for 1 victory point? \n y for yes \n n for no \n");
+                        fgets(line,MAX,stdin);
+                        sscanf(line, " %c", &Trade_Confirm);
+                        if(Trade_Confirm == 'y') {
+                            x.resources.brick -= 10;
+                            x.victory_points++;
+                            Mostrar(x);
+                        }
+                        else if(Trade_Confirm == 'n') {
+                            printf("you keep your resources as is then");
+                        }
+                        else {
+                            printf("that doesn't answer my question\n");
+                        }
+                    }
+
+                    if (x.resources.iron >= 10) {
+                        printf("you have %d iron \n", x.resources.iron);
+                        printf("do you wish to trade 10 of it for 1 victory point? \n y for yes \n n for no \n");
+                        fgets(line,MAX,stdin);
+                        sscanf(line, " %c", &Trade_Confirm);
+                        if(Trade_Confirm == 'y') {
+                            x.resources.iron -= 10;
+                            x.victory_points++;
+                            Mostrar(x);
+                        }
+                        else if(Trade_Confirm == 'n') {
+                            printf("you keep your resources as is then");
+                        }
+                        else {
+                            printf("that doesn't answer my question\n");
+                        }
+                    }
                 }
             }
 
-            if(a.resources.iron >= 3 && a.resources.grain >= 2 && a.territory.village >= 1) {
-                    char C_Choice;
-                    printf("wanna buy a city? \n y for yes \n n for no");
+            int buy_village(PLAYER x) {
+                if(x.resources.wool >= 1 && x.resources.grain >= 1 && x.resources.lumber >= 1 && x.resources.brick >= 1) {
+                    char V_Choice;
+                    printf("wanna buy a village? \n y for yes \n n for no");
                     fgets(line,MAX,stdin);
-                    sscanf(line, " %c", &C_Choice);
-                    if(C_Choice == 'y') {
-                        a.resources.iron -= 3;
-                        a.resources.grain -= 2;
-                        a.territory.city++;
-                        a.territory.village--;
-                        a.victory_points++;
-                        Mostrar(a);
+                    sscanf(line, " %c", &V_Choice);
+                    if(V_Choice == 'y') {
+                        x.resources.wool--;
+                        x.resources.grain--;
+                        x.resources.lumber--;
+                        x.resources.brick--;
+                        x.territory.village++;
+                        x.victory_points++;
+                        Mostrar(x);
                     }
-                    else if(C_Choice == 'n') {
+                    else if(V_Choice == 'n') {
                         printf("maybe next round then");
                     }
                     else {
                         printf("that doesn't answer my question\n");
                     }
+                }
+            }
+
+            int buy_city(PLAYER x) {
+                if(x.resources.iron >= 3 && x.resources.grain >= 2 && x.territory.village >= 1) {
+                        char C_Choice;
+                        printf("wanna buy a city? \n y for yes \n n for no");
+                        fgets(line,MAX,stdin);
+                        sscanf(line, " %c", &C_Choice);
+                        if(C_Choice == 'y') {
+                            x.resources.iron -= 3;
+                            x.resources.grain -= 2;
+                            x.territory.city++;
+                            x.territory.village--;
+                            x.victory_points++;
+                            Mostrar(x);
+                        }
+                        else if(C_Choice == 'n') {
+                            printf("maybe next round then");
+                        }
+                        else {
+                            printf("that doesn't answer my question\n");
+                        }
+                }
             }
 
             turn(a, b, Turn);
