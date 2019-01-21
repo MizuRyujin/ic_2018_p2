@@ -6,7 +6,7 @@
 #include "abrirINI.h"
 #include "criarGrid.h"
 #include "Mapa.h"
-#include "player.h"
+#include "player1.h"
 
 int main(int argc, char **argv)   //Primeiro pede o ficheiro INI para as configs do jogo
 {

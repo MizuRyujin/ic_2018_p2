@@ -1,12 +1,15 @@
 #ifndef __MAPA_H__
 #define __MAPA_H__
 
+#define MAX 256
+
 typedef void *ITEM;
 
 typedef struct {
 	ITEM*map;
 	unsigned int xdim;
 	unsigned int ydim;
+	unsigned int grlh[MAX][MAX];
     } MAPA;
 
 MAPA*create_mapa(unsigned int xdim, unsigned int ydim);

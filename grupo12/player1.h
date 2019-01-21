@@ -1,8 +1,8 @@
-#ifndef __PLAYER_H__
-#define __PLAYER_H__
+#ifndef __PLAYER1_H__
+#define __PLAYER1_H__
 
 #include <stdio.h>
-#include "borboleta.h"
+#include "criarGrid.h"
 #define MAX 256
 char line[MAX];
 typedef struct {
