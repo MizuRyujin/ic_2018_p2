@@ -5,6 +5,9 @@
 
 typedef void *ITEM;
 
+/**
+ * estrutura das coordenadas da grelha/mapa
+ * */
 typedef struct {
 	ITEM*map;
 	unsigned int xdim;
@@ -12,6 +15,9 @@ typedef struct {
 	unsigned int grlh[MAX][MAX];
     } MAPA;
 
+/**
+ * define funções de criação e destruição do mapa
+ * */
 MAPA*create_mapa(unsigned int xdim, unsigned int ydim);
 void destroy_map(MAPA*mp);
 void destroy_map_full(MAPA*mp, void(item_destroy)(ITEM*item));

@@ -3,6 +3,9 @@
 
 #define MAX 256
 
+/**
+ * define a função que o ficheiro de configuração
+ * */
 FILE * abreINI(char *, char *);
 
 #endif
