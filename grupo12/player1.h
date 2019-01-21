@@ -2,7 +2,6 @@
 #define __PLAYER1_H__
 
 #include <stdio.h>
-#include "criarGrid.h"
 #define MAX 256
 char line[MAX];
 typedef struct {
@@ -33,6 +32,7 @@ void turn(PLAYER a, PLAYER b, int Turn) {
         else {
                 printf("%s\n", a.name);
         }
+        Turn++;
     }
 
 void Mostrar(PLAYER x)
