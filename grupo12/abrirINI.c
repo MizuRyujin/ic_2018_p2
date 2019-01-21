@@ -24,3 +24,42 @@ FILE * abreINI(char * nome, char * modo)
 	}
 	return f;
 }
+
+void **ReadLines(FILE *file)
+{
+ char **lineBuffer = (char**)malloc(sizeof(char**));
+ lineBuffer[0] = (char*)malloc(sizeof(char));
+ char ch = getc(file);
+ int count = 0;
+ int lineCount = 0;
+ while ((ch != EOF))
+ {
+  lineBuffer[lineCount] = (char*)realloc((char*)lineBuffer[lineCount], sizeof(char) * ((int)strlen(lineBuffer[lineCount]) + 1));
+  ((char*)lineBuffer[lineCount])[count] = ch;
+  count++;
+  ch = getc(file);
+  if ((ch == '\n'))
+  {
+  
+   lineBuffer[lineCount] = (char*)realloc((char*)lineBuffer[lineCount], sizeof(char) * ((int)strlen(lineBuffer[lineCount]) + 1));
+   ((char*)lineBuffer[lineCount])[count] = '\0';
+   count = 0;
+   lineCount++;
+   lineBuffer = (char**)realloc((char**)lineBuffer, sizeof(char**) * (lineCount + 1));
+   lineBuffer[lineCount] = (char*)malloc(sizeof(char));
+  }
+  else if (ch == EOF)
+  {
+   lineBuffer[lineCount] = (char*)realloc((char*)lineBuffer[lineCount], sizeof(char) * ((int)strlen(lineBuffer[lineCount]) + 1));
+   ((char*)lineBuffer[lineCount])[count] = '\0';
+  }
+ }
+ void **a = (void**)malloc(sizeof(void**) * 2);
+ a[0] = (void*)lineBuffer;
+ a[1] = (void*)lineCount;
+ return a;
+}
+
+int ParseToInt(char *text){
+	return (int)strtol(text, NULL, 10);
+}

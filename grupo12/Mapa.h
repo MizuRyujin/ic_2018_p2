@@ -9,7 +9,7 @@ typedef struct {
 	ITEM*map;
 	unsigned int xdim;
 	unsigned int ydim;
-	unsigned int grlh[MAX][MAX];
+	char ** grid;
     } MAPA;
 
 MAPA*create_mapa(unsigned int xdim, unsigned int ydim);

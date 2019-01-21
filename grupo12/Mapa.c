@@ -14,6 +14,11 @@ MAPA *create_mapa(unsigned int xdim, unsigned int ydim){
 }
 
 void destroy_mapa(MAPA *mp){
+	for(int i = 0; i < mp->xdim;i++)
+	{
+		free(mp->grid[i]);
+	}
+	free(mp->grid);
     free(mp->map);
     free(mp);
 }

@@ -6,7 +6,7 @@
 #include "abrirINI.h"
 #include "criarGrid.h"
 #include "Mapa.h"
-#include "player1.h"
+//#include "player1.h"
 
 int main(int argc, char **argv)   //Primeiro pede o ficheiro INI para as configs do jogo
 {
@@ -24,6 +24,51 @@ int main(int argc, char **argv)   //Primeiro pede o ficheiro INI para as configs
 	}
 
 	f = abreINI(argv[1], "r");
+	
+	 //Le as linhas
+	void **data = ReadLines(f);
+ //retira as linhas de data
+ char **lines = (char**)data[0];
+ //Retira o numero de linhas de data
+ int lineCount = (int)data[1];
+ //percorre o array de linhas imprime e liberta da memória as linhas
+ for(int i = 0; i <= lineCount; i++)
+ {
+  	if ( lines[i][1] != ';')
+	{
+		char * s = strtok(lines[i], "=");
+		while(s != NULL)
+		{
+			char *f = (char*)malloc(sizeof(char) * strlen(s));
+			for(int k = 1; k < strlen(s); k++)
+				f[k - 1] = s[k];
+			f[strlen(s) - 1] = '\0';
+			if (strcmp(f, "xdim") == 0)
+			{
+				s = strtok(NULL, "=") ;
+				xdim = ParseToInt(s);
+				printf("xdim = %d", xdim);
+			}
+			if (strcmp(f, "ydim") == 0)
+			{
+				s = strtok(NULL, "=") ;
+				ydim = ParseToInt(s);
+				printf("ydim = %d", ydim);
+			}
+			else
+				s = strtok(NULL, "=");
+			free(f);
+		}
+
+	}
+  free(lines[i]);
+ }
+ //Liberta da memoria as linhas
+ free(lines);
+ //Liberta da memória data
+ free(data);
+ //fechar ficeiro
+ fclose(f);
 
 	srand(time(NULL));
 

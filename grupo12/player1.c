@@ -6,9 +6,8 @@ char Trade10[MAX];
 char Trade41;
 int Turn = 0;
 
-int main()
+void blabla()
 {
-
     PLAYER a = {"",{0,0,0,0,0},{0,0},0};
 
 	printf("Player1 please state your name:\n");
