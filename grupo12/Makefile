@@ -8,13 +8,13 @@ MAPA=criarGrid
 
 $(PROGRAM): $(PROGRAM).o $(MAPA).o catanSimples.o Mapa.o player.o abrirINI.o
 
-$(PROGRAM).o: $(PROGRAM).c player.h Mapa.h abrirINI.h
+$(PROGRAM).o: $(PROGRAM).c player1.h Mapa.h abrirINI.h
 
-$(MAPA).o: $(MAPA).c player.h Mapa.h abrirINI.h
+$(MAPA).o: $(MAPA).c player1.h Mapa.h abrirINI.h
 
 Mapa.o: criarGrid.c criarGrid.h Mapa.c abrirINI.c Mapa.h
 
-player.o: player.c player.h
+player.o: player1.c player1.h
 
 .PHONY: clean
 clean:
