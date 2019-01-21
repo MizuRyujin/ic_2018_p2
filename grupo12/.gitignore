@@ -11,3 +11,7 @@ player.h.save
 loopCoord.c
 loopCoord
 criarGrid
+borboleta.c
+borboleta.h
+player.c
+player.h
