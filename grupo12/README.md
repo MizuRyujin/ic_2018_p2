@@ -42,3 +42,5 @@ Referências:
 	Tivemos algumas discussões de ideias com colegas, o João David e o Rodrigo Pinheiro.
 
 	
+![Fluxograma](FluxogramaBibliotecas.jpg)
+
