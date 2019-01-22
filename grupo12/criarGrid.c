@@ -31,7 +31,7 @@ void updateMapa(GRELHA grlh, MAPA *mp)
 			node.coordinates++;*/
 		}
 		printf("\n");
-		for(int j = 0; j < mp->xdim; j++)
+		for(unsigned int j = 0; j < mp->xdim; j++)
 		{
 			printf("+            +");
 			printf("+     #=%d   +", node.coordinates);

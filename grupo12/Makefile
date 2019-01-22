@@ -4,7 +4,7 @@ LDFLAGS=
 LDLIBS=
 
 PROGRAM=catanSimples
-MAPA=criarGrid
+MAPA=Mapa
 
 $(PROGRAM): $(PROGRAM).o $(MAPA).o catanSimples.o Mapa.o player1.o abrirINI.o
 
@@ -12,7 +12,7 @@ $(PROGRAM).o: $(PROGRAM).c player1.h Mapa.h abrirINI.h
 
 $(MAPA).o: $(MAPA).c player1.h Mapa.h abrirINI.h
 
-Mapa.o: criarGrid.c criarGrid.h Mapa.c abrirINI.c Mapa.h
+Mapa.o: Mapa.c abrirINI.c Mapa.h
 
 player1.o: player1.c player1.h
 

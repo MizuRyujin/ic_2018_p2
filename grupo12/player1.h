@@ -2,6 +2,7 @@
 #define __PLAYER1_H__
 
 #include <stdio.h>
+#include <time.h>
 #define MAX 256
 char line[MAX];
 typedef struct {
@@ -27,12 +28,11 @@ typedef struct {
 
 void turn(PLAYER a, PLAYER b, int Turn) {
         if (Turn % 2 == 0) {
-                printf("%s\n", b.name);
+                printf("%s, it's your time to play\n", b.name);
         }
         else {
-                printf("%s\n", a.name);
+                printf("%s, it's your time to play\n", a.name);
         }
-        Turn++;
     }
 
 void Mostrar(PLAYER x)
@@ -44,6 +44,16 @@ void Mostrar(PLAYER x)
 
 }
 
+int randomNumber(int min, int max)		//Gerador de numero aleatorio e função de roleta a seguir
+{
+	if(min>max)
+	{
+		int aux = min;
+		min = max;
+		max = aux;
+	}
+	return min + rand() % ((max-min)+1);
+}
 
 
 #endif

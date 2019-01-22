@@ -2,7 +2,7 @@
 #define __CRIARGRID_H__
 
 #include <stdio.h>
-#include "Mapa.h"
+//#include "Mapa.h"
 
 typedef void *GRELHA;
 
