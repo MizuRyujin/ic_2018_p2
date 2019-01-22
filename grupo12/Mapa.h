@@ -7,18 +7,15 @@
  * estrutura das coordenadas da grelha/mapa
  * */
 
-<<<<<<< HEAD
 typedef enum BEARINGS {North, West, East, South} brngs;
 
 typedef struct {
         int coordinates;
         brngs brngs;
         int value;
-	int grid[MAX];
+	int * grid[MAX];
         } NODE;
 
-=======
->>>>>>> ac0e12dd21922ee0a24d77d14dcecb15a96c1eba
 /**
  * estrutura das coordenadas da grelha/mapa
  * */

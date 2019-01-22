@@ -4,11 +4,8 @@
 #include "abrirINI.h"
 #include <stdlib.h>
 
-<<<<<<< HEAD
 NODE node = {0,0,0,{NULL}};
 
-=======
->>>>>>> ac0e12dd21922ee0a24d77d14dcecb15a96c1eba
 /**
  * definir estrutura do mapa e coordenadas do mesmo
  * */
@@ -18,6 +15,7 @@ MAPA *create_mapa(unsigned int xdim, unsigned int ydim){
     mp->map = calloc(xdim * ydim, sizeof(NODE));
     mp->xdim = xdim;
     mp->ydim = ydim;
+    mp->map->grid[MAX] = (int*){NULL};
     return mp;
 }
 
@@ -27,9 +25,9 @@ MAPA *create_mapa(unsigned int xdim, unsigned int ydim){
 void destroy_mapa(MAPA *mp){
 	for(unsigned int i = 0; i < mp->xdim;i++)
 	{
-		free(mp->grid[i]);
+		free(mp->map->grid[i]);
 	}
-	free(mp->grid);
+	free(mp->map->grid);
     free(mp->map);
     free(mp);
 }
@@ -38,13 +36,12 @@ void destroy_mapa_full(MAPA *mp, void(*item_destroy)(NODE *node))
 {
     for(unsigned int i = 0; i < mp -> xdim * mp -> ydim; ++i)
     {
-        if (mp -> map[i] !=NULL){
-            item_destroy(mp ->map[i]);
+        if (mp -> map->grid[i] != NULL){
+            item_destroy(mp ->map->grid[i]);
         }
     }
     destroy_mapa(mp);
 }
-<<<<<<< HEAD
 
 /**
 * funções da criação do mapa
@@ -52,19 +49,13 @@ void destroy_mapa_full(MAPA *mp, void(*item_destroy)(NODE *node))
 
 /*void mapa_put(MAPA *mp, unsigned int x, unsigned int y, NODE *node)
 {
-=======
-/**
-* funções da criação do mapa
-* */
-void mapa_put(MAPA *mp, unsigned int x, unsigned int y, ITEM *item){
->>>>>>> ac0e12dd21922ee0a24d77d14dcecb15a96c1eba
     mp -> map [y * mp -> xdim + x] = item;
 }*/
 
-NODE*mapa_get(MAPA*mp, unsigned int x, unsigned int y)
+/*NODE*mapa_get(MAPA*mp, unsigned int x, unsigned int y)
 {
     return mp -> map [y * mp -> xdim + x];
-}
+}*/
 
 /**
 * funções de criação dos grafismos
@@ -73,7 +64,7 @@ NODE*mapa_get(MAPA*mp, unsigned int x, unsigned int y)
 NODE createNew(MAPA *mp)
 {
         mp = mp;
-        return stdout;
+       // return stdout;
 }
 
 void updateMapa(NODE node, MAPA *mp)
@@ -104,9 +95,9 @@ void updateMapa(NODE node, MAPA *mp)
                         printf("+     #=%d   +", node.coordinates);
                         node.coordinates++;
                 }
-                fprintf((FILE *) node, "\n");
+                fprintf((FILE *) node.grid, "\n");
         }
-        fprintf((FILE *) node, "\n");
+        fprintf((FILE *) node.grid, "\n");
 }
 
 void destroyMapa(NODE node)

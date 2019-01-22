@@ -3,8 +3,11 @@
 
 #include <stdio.h>
 #include <time.h>
+
 #define MAX 256
+
 char line[MAX];
+
 typedef struct {
 	int wool;
 	int grain;
@@ -17,43 +20,22 @@ typedef struct {
 	int village;
 	int city;
 	}TERRITORY;
-typedef struct {
 
+typedef struct {
 	char name[100];
 	RESOURCES resources;
 	TERRITORY territory;
-//	struct TERRAIN recurso;
 	int victory_points;
 	}PLAYER;
 
-void turn(PLAYER a, PLAYER b, int Turn) {
-        if (Turn % 2 == 0) {
-                printf("%s, it's your time to play\n", b.name);
-        }
-        else {
-                printf("%s, it's your time to play\n", a.name);
-        }
-    }
+void turn(PLAYER x1, PLAYER x2, int Turn);
 
-void Mostrar(PLAYER x)
-{
-	printf("Name		    : %s\n", x.name);
-	printf("Resources	    : %d wool/%d grain/%d lumber/%d brick/%d iron\n", x.resources.wool, x.resources.grain, x.resources.lumber, x.resources.brick, x.resources.iron);
-	printf("Territory	    : %d villages/%d citys\n", x.territory.village, x.territory.city);
-	printf("victory points	: %d\n", x.victory_points);
+int dice(int dice1, int dice2);
 
-}
+void Mostrar(PLAYER x);
 
-int randomNumber(int min, int max)		//Gerador de numero aleatorio e função de roleta a seguir
-{
-	if(min>max)
-	{
-		int aux = min;
-		min = max;
-		max = aux;
-	}
-	return min + rand() % ((max-min)+1);
-}
+int trade4(PLAYER x);
 
+int randomNumber(int min, int max);
 
 #endif
