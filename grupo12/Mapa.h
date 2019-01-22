@@ -16,6 +16,9 @@ typedef struct {
 	int grid[MAX];
         } NODE;
 
+/**
+ * estrutura das coordenadas da grelha/mapa
+ * */
 typedef struct {
 	NODE*map;
 	unsigned int xdim;

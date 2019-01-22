@@ -7,6 +7,9 @@
 #include "Mapa.h"
 #include "player1.h"
 
+/**
+ * função main do programa, começa por pedir coordenadas do mapa, depois criando-o
+ * */
 int main(int argc, char **argv)   //Primeiro pede o ficheiro INI para as configs do jogo
 {
 	unsigned int xdim = 0, ydim = 0;
