@@ -128,6 +128,8 @@ int trade4(PLAYER x) {
                                 * */
                                 printf("That doesn't answer my question\n!");
                                 //trade4(a);
+                                printf("that doesn't answer my question\n");
+                                trade4(x);
                             }
                         }
                         /**
@@ -175,6 +177,8 @@ int trade4(PLAYER x) {
                             else {
                                 printf("That doesn't answer my question\n!");
                                 //trade4(a);
+                                printf("that doesn't answer my question\n");
+                                trade4(x);
                             }
                         }
                         /**
@@ -222,6 +226,8 @@ int trade4(PLAYER x) {
                             else {
                                 printf("that doesn't answer my question\n!");
                                 //trade4(a);
+                                printf("that doesn't answer my question\n");
+                                trade4(x);
                             }
                         }
                         /**
@@ -269,6 +275,8 @@ int trade4(PLAYER x) {
                             else {
                                 printf("That doesn't answer my question\n!");
                                 //trade4(a);
+                                printf("that doesn't answer my question\n");
+                                trade4(x);
                             }
                         }
                         /**
@@ -316,6 +324,8 @@ int trade4(PLAYER x) {
                             else {
                                 printf("That doesn't answer my question\n!");
                                 //trade4(a);
+                                printf("that doesn't answer my question\n");
+                                trade4(x);
                             }
                     }
                 }
@@ -324,6 +334,7 @@ int trade4(PLAYER x) {
 /**
  *  troca por pontos de vitoria 10 por 1 
  * */
+//troca por pontos de vitoria 10 por 1
 
             int trade10(PLAYER x) {
                 /**
@@ -351,6 +362,8 @@ int trade4(PLAYER x) {
                         }
                         else {
                             printf("That doesn't answer my question\n!");
+                            printf("that doesn't answer my question\n");
+                            trade10(x);
                         }
                     }
                     /**
@@ -371,6 +384,8 @@ int trade4(PLAYER x) {
                         }
                         else {
                             printf("That doesn't answer my question\n!");
+                            printf("that doesn't answer my question\n");
+                            trade10(x);
                         }
                     }
                     /**
@@ -391,6 +406,8 @@ int trade4(PLAYER x) {
                         }
                         else {
                             printf("That doesn't answer my question\n!");
+                            printf("that doesn't answer my question\n");
+                            trade10(x);
                         }
                     }
                     /**
@@ -411,6 +428,8 @@ int trade4(PLAYER x) {
                         }
                         else {
                             printf("That doesn't answer my question\n!");
+                            printf("that doesn't answer my question\n");
+                            trade10(x);
                         }
                     }
                     /**
@@ -431,6 +450,8 @@ int trade4(PLAYER x) {
                         }
                         else {
                             printf("That doesn't answer my question\n!");
+                            printf("that doesn't answer my question\n");
+                            trade10(x);
                         }
                     }
                 }
@@ -466,6 +487,8 @@ int trade4(PLAYER x) {
                     }
                     else {
                         printf("That doesn't answer my question\n!");
+                        printf("that doesn't answer my question\n");
+                        buy_village(x);
                     }
                 }
             }
@@ -500,6 +523,8 @@ int trade4(PLAYER x) {
                         }
                         else {
                             printf("That doesn't answer my question\n!");
+                            printf("that doesn't answer my question\n");
+                            buy_city(x);
                         }
                 }
             }
