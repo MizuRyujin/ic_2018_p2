@@ -2,6 +2,7 @@
 *.swp
 *.exe
 *.out
+*.orig
 
 tempCodeRunnerFile.c
 player

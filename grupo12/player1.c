@@ -11,8 +11,25 @@ int dice2;
 int roll;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 int dice(int dice1, int dice2)
+=======
+int dice(int dice1, int dice2)
+{
+    srand(time(NULL));
+    dice1 = randomNumber(1,6);
+    dice2 = randomNumber(1,6);
+    roll = dice1 + dice2;
+    printf("you rolled a %d\n", roll);
+    return roll;
+
+}
+
+
+
+void blabla()
+>>>>>>> ac0e12dd21922ee0a24d77d14dcecb15a96c1eba
 {
     srand(time(NULL));
     dice1 = randomNumber(1,6);

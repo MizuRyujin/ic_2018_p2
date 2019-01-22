@@ -4,8 +4,11 @@
 #include "abrirINI.h"
 #include <stdlib.h>
 
+<<<<<<< HEAD
 NODE node = {0,0,0,{NULL}};
 
+=======
+>>>>>>> ac0e12dd21922ee0a24d77d14dcecb15a96c1eba
 /**
  * definir estrutura do mapa e coordenadas do mesmo
  * */
@@ -41,6 +44,7 @@ void destroy_mapa_full(MAPA *mp, void(*item_destroy)(NODE *node))
     }
     destroy_mapa(mp);
 }
+<<<<<<< HEAD
 
 /**
 * funções da criação do mapa
@@ -48,6 +52,12 @@ void destroy_mapa_full(MAPA *mp, void(*item_destroy)(NODE *node))
 
 /*void mapa_put(MAPA *mp, unsigned int x, unsigned int y, NODE *node)
 {
+=======
+/**
+* funções da criação do mapa
+* */
+void mapa_put(MAPA *mp, unsigned int x, unsigned int y, ITEM *item){
+>>>>>>> ac0e12dd21922ee0a24d77d14dcecb15a96c1eba
     mp -> map [y * mp -> xdim + x] = item;
 }*/
 
