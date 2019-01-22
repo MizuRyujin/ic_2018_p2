@@ -18,3 +18,6 @@ borboleta.c
 borboleta.h
 player.c
 player.h
+teste_mapa.c
+teste_mapa
+teste_strcpy_mapa.c
