@@ -4,7 +4,9 @@
 #include "grelhaP.h"
 
 NODE node = {1,0};
-
+/**
+ * função que desenha a grelha
+ * */
 int grelha()
 {
         printf("+------------+------------+------------+------------+\n");
