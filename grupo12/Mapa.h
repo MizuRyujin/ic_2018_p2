@@ -9,13 +9,13 @@
 
 typedef enum BEARINGS {North, West, East, South} brngs;
 
+
 typedef struct {
         int coordinates;
         brngs brngs;
         int value;
 	int * grid[MAX];
         } NODE;
-
 /**
  * estrutura das coordenadas da grelha/mapa
  * */

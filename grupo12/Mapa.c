@@ -11,11 +11,14 @@ NODE node = {0,0,0,{NULL}};
  * */
 MAPA *create_mapa(unsigned int xdim, unsigned int ydim){
     MAPA *mp = NULL;
+  //NODE *mapa = NULL;
     mp = malloc(sizeof(MAPA));
-    mp->map = calloc(xdim * ydim, sizeof(NODE));
+    mp->map = calloc(xdim * ydim, sizeof((NODE*)mp));
     mp->xdim = xdim;
     mp->ydim = ydim;
-    mp->map->grid[MAX] = (int*){NULL};
+   // mp->map->grid[MAX] = (int*){NULL};
+  /*mapa->coordinates = coordinates;
+    mapa->value = value;*/
     return mp;
 }
 
@@ -36,8 +39,8 @@ void destroy_mapa_full(MAPA *mp, void(*item_destroy)(NODE *node))
 {
     for(unsigned int i = 0; i < mp -> xdim * mp -> ydim; ++i)
     {
-        if (mp -> map->grid[i] != NULL){
-            item_destroy(mp ->map->grid[i]);
+        if (mp->map->grid[i] != NULL){
+            item_destroy(mp->map->grid[i]);
         }
     }
     destroy_mapa(mp);
@@ -64,7 +67,7 @@ void destroy_mapa_full(MAPA *mp, void(*item_destroy)(NODE *node))
 NODE createNew(MAPA *mp)
 {
         mp = mp;
-       // return stdout;
+        return stdout;
 }
 
 void updateMapa(NODE node, MAPA *mp)
