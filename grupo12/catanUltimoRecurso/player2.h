@@ -1,5 +1,5 @@
-#ifndef __PLAYER1_H__
-#define __PLAYER1_H__
+#ifndef __PLAYER2_H__
+#define __PLAYER2_H__
 
 #include <stdio.h>
 #include <time.h>

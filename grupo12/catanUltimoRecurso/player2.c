@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "player1.h"
+#include "player2.h"
 #include <time.h>
 
 #define MAX 256

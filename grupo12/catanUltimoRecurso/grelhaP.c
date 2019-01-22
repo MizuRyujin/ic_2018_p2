@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "player1.h"
+#include "player2.h"
 #include "grelhaP.h"
 
 NODE node = {1,0};
