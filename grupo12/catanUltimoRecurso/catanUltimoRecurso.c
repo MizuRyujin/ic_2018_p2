@@ -66,7 +66,11 @@ int main()
             case 0: printf("Só há deserto nessa direção\n"); break;
             default : printf("\n"); break;
         }
-		grelha();
+	grelha();
+
+	printf("You rolled an %d\n", roll);
+
+	Mostrar(a);
 
         trade4(a);
 
@@ -75,6 +79,8 @@ int main()
         buy_city(a);
 
         buy_village(a);
+
+	printf("\n");
 
         turn(a, b, Turn);
         Turn++;
@@ -92,15 +98,19 @@ int main()
             case 0: printf("Só há deserto nessa direção\n"); break;
             default : printf("\n"); break;
         }
-		grelha();
+	grelha();
 
-		trade4(b);
+	Mostrar(b);
+
+	trade4(b);
 
         trade10(b);
 
         buy_city(b);
 
         buy_village(b);
+
+	printf("\n");
 	}
 
     return 0;

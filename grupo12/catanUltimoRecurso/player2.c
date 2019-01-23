@@ -30,7 +30,6 @@ int dice(int dice1, int dice2)
     dice1 = randomNumber(1,6);
     dice2 = randomNumber(1,6);
     roll = dice1 + dice2;
-    printf("you rolled a %d\n", roll);
     return roll;
 
 }
@@ -65,6 +64,7 @@ int pos(PLAYER x)
         case 14 : x.cord_14++; break;
         case 15 : x.cord_15++; break;
         case 16 : x.cord_16++; break;
+	default : "Not a valid position\n";
     }
 }
 
@@ -145,7 +145,7 @@ int trade4(PLAYER x) {
                                             }
                             }
                             else if(Trade_Confirm == 'n') {
-                                printf("you keep your resources as is then");
+                                printf("you keep your resources as is then\n");
                             }
                             else {
                                 printf("that doesn't answer my question\n");
@@ -178,7 +178,7 @@ int trade4(PLAYER x) {
                                             }
                             }
                             else if(Trade_Confirm == 'n') {
-                                printf("you keep your resources as is then");
+                                printf("you keep your resources as is then\n");
                             }
                             else {
                                 printf("that doesn't answer my question\n");
@@ -211,7 +211,7 @@ int trade4(PLAYER x) {
                                             }
                             }
                             else if(Trade_Confirm == 'n') {
-                                printf("you keep your resources as is then");
+                                printf("you keep your resources as is then\n");
                             }
                             else {
                                 printf("that doesn't answer my question\n");
@@ -244,7 +244,7 @@ int trade4(PLAYER x) {
                                             }
                             }
                             else if(Trade_Confirm == 'n') {
-                                printf("you keep your resources as is then");
+                                printf("you keep your resources as is then\n");
                             }
                             else {
                                 printf("that doesn't answer my question\n");
@@ -270,7 +270,7 @@ int trade4(PLAYER x) {
                             Mostrar(x);
                         }
                         else if(Trade_Confirm == 'n') {
-                            printf("you keep your resources as is then");
+                            printf("you keep your resources as is then\n");
                         }
                         else {
                             printf("that doesn't answer my question\n");
@@ -289,7 +289,7 @@ int trade4(PLAYER x) {
                             Mostrar(x);
                         }
                         else if(Trade_Confirm == 'n') {
-                            printf("you keep your resources as is then");
+                            printf("you keep your resources as is then\n");
                         }
                         else {
                             printf("that doesn't answer my question\n");
@@ -308,7 +308,7 @@ int trade4(PLAYER x) {
                             Mostrar(x);
                         }
                         else if(Trade_Confirm == 'n') {
-                            printf("you keep your resources as is then");
+                            printf("you keep your resources as is then\n");
                         }
                         else {
                             printf("that doesn't answer my question\n");
@@ -327,7 +327,7 @@ int trade4(PLAYER x) {
                             Mostrar(x);
                         }
                         else if(Trade_Confirm == 'n') {
-                            printf("you keep your resources as is then");
+                            printf("you keep your resources as is then\n");
                         }
                         else {
                             printf("that doesn't answer my question\n");
@@ -346,7 +346,7 @@ int trade4(PLAYER x) {
                             Mostrar(x);
                         }
                         else if(Trade_Confirm == 'n') {
-                            printf("you keep your resources as is then");
+                            printf("you keep your resources as is then\n");
                         }
                         else {
                             printf("that doesn't answer my question\n");
@@ -371,7 +371,7 @@ int trade4(PLAYER x) {
                         x.resources.brick--;
                         x.territory.village++;
                         x.victory_points++;
-                        printf("where do you want your village? it can only be next to a terrain that is already yours");
+                        printf("where do you want your village? it can only be next to a terrain that is already yours\n");
                         if(x.cord_1 = 1)
                         {
                             fgets(line,MAX,stdin);
@@ -581,7 +581,7 @@ int trade4(PLAYER x) {
             int buy_city(PLAYER x) {
                 if(x.resources.iron >= 3 && x.resources.grain >= 2 && x.territory.village >= 1) {
                         char C_Choice;
-                        printf("wanna buy a city? \n y for yes \n n for no");
+                        printf("wanna buy a city? \n y for yes \n n for no\n");
                         fgets(line,MAX,stdin);
                         sscanf(line, " %c", &C_Choice);
                         if(C_Choice == 'y') {
@@ -593,7 +593,7 @@ int trade4(PLAYER x) {
                             Mostrar(x);
                         }
                         else if(C_Choice == 'n') {
-                            printf("maybe next round then");
+                            printf("maybe next round then\n");
                         }
                         else {
                             printf("that doesn't answer my question\n");
