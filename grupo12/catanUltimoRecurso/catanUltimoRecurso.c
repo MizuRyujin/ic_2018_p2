@@ -10,29 +10,26 @@
 int main()
 {
 	NODE node = {1,0};
-<<<<<<< HEAD
-	/**
-	 * array de recursos de casa jogador
-	 * */
-	PLAYER a = {"",{0,0,0,0,0},{0,0},0};
-||||||| merged common ancestors
-	/**
-	 * array de recursos de casa jogador
-	 * */	
-	PLAYER a = {"",{0,0,0,0,0},{0,0},0};
-=======
->>>>>>> 3288fdb6ba2db75eabf700f1a75b4727bc895fc2
 
+	/**
+	 * Inicializar a struct jogador
+	 * */
 	PLAYER a = {"",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,{0,0,0,0,0},{0,0},0};
 
 	PLAYER b = {"",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,{0,0,0,0,0},{0,0},0};
 
+	/**
+	 * Pede nomes ao jogadores
+	 * */
         printf("Player 1 please state your name:\n");
         gets(a.name);
 
         printf("Player 2 please state your name:\n");
         gets(b.name);
 
+	/**
+	 * Imprime a grelha
+	 * */
         grelha();
 
         printf("chose a coordenate to begin in %s\n", a.name);
@@ -42,6 +39,10 @@ int main()
         pos(b);
 
 	grelha();
+
+	/**
+	 * Loop principal com a ordem de jogo
+	 * */
 
 	while(a.victory_points <= 5 && b.victory_points <= 5)
     {
