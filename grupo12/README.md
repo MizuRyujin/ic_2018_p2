@@ -34,7 +34,9 @@ Conclusões e matéria aprendida:
 	Tivemos problemas com arrays, listas e matrizes na criação da grelha, inclusive ao colocar a grelha em forma de quadro colocando-a horizontalmente.
  	Foi difícil criar as estruturas e garantir que os valores destas fossem alterados conforme o desejado.
 	Conseguimos organizar programas em bibliotecas sem ter necessidade de definir variáveis globaisevitando ficheiros .c demasiado extensos e desorganizados.
-	
+	Apesar de termos conseguido organizar, devido a problemas com o upload dos ficheiros para o repositório infelizmente aconteceu algum tipo de conflito entre ficheiros revertendo a versão quase completa do programa para um estado bem mais antigo.
+	Com isso houve bastantes erros que começaram a aparecer que não conseguimos mesmo resolver, fazendo com que não conseguissemos que o INI fosse lido corretamente, por exemplo. Como este problema aconteceu um dia antes da entrega, para evitar não entregar um projeto decidimos criar a versão catanUltimoRecurso que não lê o INI nem usa tantos headers como a versão que falhou.
+	Incluimos ambas as versões na diretoria do grupo12.
 
 Referências: 
 	Para este projeto, as referências mais diretas que utilizámos foram tiradas da aula 12 de IC, utilizando os cprogs e os slides dados pelo professor que nos ajudaram imenso a organizar e a estruturar o nosso programa.
