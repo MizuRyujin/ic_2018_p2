@@ -15,7 +15,7 @@ int main()
 	NODE node = {1,0};
 	/**
 	 * array de recursos de casa jogador
-	 * */	
+	 * */
 	PLAYER a = {"",{0,0,0,0,0},{0,0},0};
 
 	PLAYER b = {"",{0,0,0,0,0},{0,0},0};
