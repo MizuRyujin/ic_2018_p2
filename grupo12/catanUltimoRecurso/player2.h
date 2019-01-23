@@ -7,9 +7,7 @@
 #define MAX 256
 
 char line[MAX];
-/**
- * estruturas dos recursos e das aldeias e cidades
- * */
+
 typedef struct {
 	int wool;
 	int grain;
@@ -23,22 +21,29 @@ typedef struct {
 	int city;
 	}TERRITORY;
 
-/**
- * estado do jogador
- * */
-
 typedef struct {
 	char name[100];
+	int cord_1;
+	int cord_2;
+	int cord_3;
+	int cord_4;
+	int cord_5;
+	int cord_6;
+	int cord_7;
+	int cord_8;
+	int cord_9;
+	int cord_10;
+	int cord_11;
+	int cord_12;
+	int cord_13;
+	int cord_14;
+	int cord_15;
+	int cord_16;
 	RESOURCES resources;
 	TERRITORY territory;
 	int victory_points;
 	}PLAYER;
-/**
- * variáveis que entram para
- * as funções dos dados 
- * e turnos de jogador
- * 
- * */
+
 void turn(PLAYER x1, PLAYER x2, int Turn);
 
 int dice(int dice1, int dice2);

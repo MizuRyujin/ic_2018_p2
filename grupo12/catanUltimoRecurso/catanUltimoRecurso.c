@@ -7,38 +7,30 @@
 #include "grelhaP.h"
 
 
-/**
- * função main do jogo
- * */
 int main()
 {
 	NODE node = {1,0};
-	/**
-	 * array de recursos de casa jogador
-	 * */	
-	PLAYER a = {"",{0,0,0,0,0},{0,0},0};
 
-	PLAYER b = {"",{0,0,0,0,0},{0,0},0};
+	PLAYER a = {"",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,{0,0,0,0,0},{0,0},0};
 
-	/**
-	 * pede nome de jogadores
-	 * */
+	PLAYER b = {"",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,{0,0,0,0,0},{0,0},0};
+
         printf("Player 1 please state your name:\n");
         gets(a.name);
 
         printf("Player 2 please state your name:\n");
         gets(b.name);
-	/**
-	 * chama função grelha desenhando
-	 * o mapa
-	 * */
+
+        grelha();
+
+        printf("chose a coordenate to begin in %s\n", a.name);
+        pos(a);
+
+        printf("chose a coordenate to begin in %s\n", b.name);
+        pos(b);
+
 	grelha();
-	/**
-	 * ciclo while que verifica
-	 * se os jogadores ainda não têm 6 pontos
-	 * se for este o caso, o jogo continua
-	 * rolando o dado e continuando os turnos
-	 * */
+
 	while(a.victory_points <= 5 && b.victory_points <= 5)
     {
         char toss;
@@ -76,14 +68,14 @@ int main()
         printf("press enter to throw those dice\n");
         fgets(line,MAX,stdin);
         sscanf(line, " %c", &toss);
-        dice(dice1, dice2);
-        switch(roll)
+        int roll2 = dice(dice1, dice2);
+        switch(roll2)
         {
-            case 7: b.resources.wool++; Mostrar(a); break;
-            case 9: b.resources.grain++; Mostrar(a); break;
-            case 5: b.resources.lumber++; Mostrar(a); break;
-            case 8: b.resources.brick++; Mostrar(a); break;
-            case 2: b.resources.iron++; Mostrar(a); break;
+            case 7: b.resources.wool++; Mostrar(b); break;
+            case 9: b.resources.grain++; Mostrar(b); break;
+            case 5: b.resources.lumber++; Mostrar(b); break;
+            case 8: b.resources.brick++; Mostrar(b); break;
+            case 2: b.resources.iron++; Mostrar(b); break;
             case 0: printf("Só há deserto nessa direção\n"); break;
             default : printf("\n"); break;
         }
